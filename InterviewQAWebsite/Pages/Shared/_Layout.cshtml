@@ -61,44 +61,72 @@
             </div>
         </nav>
     </header>
-    <div class="container">
+    <div class="container wrapper">
         <partial name="_CookieConsentPartial" />
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
     </div>
+    <footer class="footer " style="z-index:100">
+        <ul class="list-inline text-center">
+
+            <li class="list-inline-item">
+                <a asp-page="/Index" ><img src="~/images/html.svg" alt="Alternate Text" /></a>
+            </li>
+
+            <li class="list-inline-item">
+                <a asp-page="/Css" ><img src="~/images/css.svg" alt="Alternate Text" /></a>
+            </li>
+
+            <li class="list-inline-item">
+                <a asp-page="Javascript" ><img src="~/images/javascript.svg" alt="Alternate Text" /></a>
+            </li>
+
+            <li class="list-inline-item">
+                <a asp-page="/Csharp" ><img src="~/images/c-sharp.svg" alt="Alternate Text" /></a>
+            </li>
+            
+            <li class="list-inline-item">
+                <a asp-page="/AspNet" ><img src="~/images/ASP.Net.svg" alt="Alternate Text" /></a>
+            </li>
+            
+            <li class="list-inline-item">
+                <a asp-page="/AspNetCore" ><img src="~/images/ASP.NET-Core.svg" alt="Alternate Text" /></a>
+            </li>
+
+        </ul>
+    </footer>
 
 
 
+        <environment include="Development">
+            <script src="~/lib/jquery/dist/jquery.js"></script>
+            <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.js"></script>
+        </environment>
+        <environment exclude="Development">
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"
+                    asp-fallback-src="~/lib/jquery/dist/jquery.min.js"
+                    asp-fallback-test="window.jQuery"
+                    crossorigin="anonymous"
+                    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=">
+            </script>
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"
+                    asp-fallback-src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"
+                    asp-fallback-test="window.jQuery && window.jQuery.fn && window.jQuery.fn.modal"
+                    crossorigin="anonymous"
+                    integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o">
+            </script>
+        </environment>
 
-    <environment include="Development">
-        <script src="~/lib/jquery/dist/jquery.js"></script>
-        <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.js"></script>
-    </environment>
-    <environment exclude="Development">
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"
-                asp-fallback-src="~/lib/jquery/dist/jquery.min.js"
-                asp-fallback-test="window.jQuery"
-                crossorigin="anonymous"
-                integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=">
-        </script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"
-                asp-fallback-src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"
-                asp-fallback-test="window.jQuery && window.jQuery.fn && window.jQuery.fn.modal"
-                crossorigin="anonymous"
-                integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o">
-        </script>
-    </environment>
+        <script src="~/lib/jquery-validation/dist/jquery.validate.js"></script>
 
-    <script src="~/lib/jquery-validation/dist/jquery.validate.js"></script>
+        <script src="~/lib/jqueryui/jquery-ui.js" asp-append-version="true"></script>
+        <script src="~/font-awesome/js/fontawesome.js" asp-append-version="true"></script>
 
-    <script src="~/lib/jqueryui/jquery-ui.js" asp-append-version="true"></script>
-    <script src="~/font-awesome/js/fontawesome.js" asp-append-version="true"></script>
-
-    <script src="~/lib/summernote/summernote.js"></script>
-    <script src="~/lib/summernote/summernote-bs4.js"></script>
-    <script src="~/lib/summernote/summernote-lite.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
-    @RenderSection("Scripts", required: false)
+        <script src="~/lib/summernote/summernote.js"></script>
+        <script src="~/lib/summernote/summernote-bs4.js"></script>
+        <script src="~/lib/summernote/summernote-lite.js"></script>
+        <script src="~/js/site.js" asp-append-version="true"></script>
+        @RenderSection("Scripts", required: false)
 </body>
 </html>
