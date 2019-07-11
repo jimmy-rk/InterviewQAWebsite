@@ -10,6 +10,7 @@ RefreshTable();
 $('#new').click(function () {
 
     $('#qa-form').css('display', 'block')
+    $('#edit-qa-form').css('display', 'none')
     focusAction('qa-form');
     
    
@@ -55,6 +56,7 @@ $('#create').click( function () {
                 $('#l').val('')
                 $('#t').val('')
                 $('#qa-form').css('display', 'none')
+               
                 focusAction('tableContainer');
                 $('#tableContainer').empty();
                 RefreshTable();
@@ -95,6 +97,8 @@ $('#update').click ( function () {
                 $('#la').val('')
                 $('#to').val('')
                 $('#edit-qa-form').css('display', 'none')
+                
+
                 focusAction('tableContainer');
                 $('#tableContainer').empty();
                 RefreshTable();
@@ -148,6 +152,7 @@ $('#tableContainer').on('click', '.edit', function () {
     //$('#actionContainer').append(form)
     
     $('#edit-qa-form').css('display', 'block')
+    $('#qa-form').css('display', 'none')
     focusAction('edit-qa-form')
 
 })
@@ -167,6 +172,7 @@ $('#update-cancel').click(function () {
     $('#la').val('')
     $('#to').val('')
     $('#edit-qa-form').css('display', 'none')
+    $('#qa-form').css('display', 'none')
     focusAction('tableContainer');
 });
 

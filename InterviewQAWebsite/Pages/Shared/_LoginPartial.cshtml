@@ -4,25 +4,22 @@
 
     <ul class="navbar-nav">
         @if (SignInManager.IsSignedIn(User))
-    {
+        {
+            <li class="nav-item ">
+                <a class="auth nav-link text-dark" asp-area="" asp-page="/Admin"><img src="~/images/admin.png" alt="Alternate Text" />ADMIN <span style="font-size:10px">(@User.Identity.Name)</span></a>
+            </li>
+            <li class="nav-item">
+                <form class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Page("/", new { area = "" })" method="post">
+                    <button type="submit" class="auth nav-link btn btn-link text-dark"><img src="~/images/exit.svg" alt="Alternate Text" />LOGOUT </button>
+                </form>
+            </li>
 
-        <li class="nav-item">
-            <a class="user-name nav-link text-dark" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">Hi @User.Identity.Name</a>
-        </li>
-        <li class="nav-item">
-            <a class="auth nav-link text-dark" asp-area="" asp-page="/Admin"><img src="~/images/admin.png" alt="Alternate Text" />ADMIN</a>
-        </li>
-        <li class="nav-item">
-            <form class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Page("/", new { area = "" })" method="post">
-                <button type="submit" class="auth nav-link btn btn-link text-dark"><img src="~/images/exit.svg" alt="Alternate Text" />LOGOUT</button>
-            </form>
-        </li>
-    }
-    else
-    {
+        }
+        else
+        {
 
-        <li class="nav-item">
-            <a class="auth nav-link text-dark" asp-area="Identity" asp-page="/Account/Login"><img src="~/images/enter.svg" alt="Alternate Text" />LOGIN</a>
-        </li>
-    }
+            <li class="nav-item">
+                <a class="auth nav-link text-dark" asp-area="Identity" asp-page="/Account/Login"><img src="~/images/enter.svg" alt="Alternate Text" />LOGIN</a>
+            </li>
+        }
     </ul>

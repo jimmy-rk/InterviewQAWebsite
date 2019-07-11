@@ -7,9 +7,9 @@ a.navbar-brand {
   word-break: break-all;
 }
 .auth {
-    text-transform: uppercase;
+    
     border-radius:5px;
-    margin-right:5px;
+    
     
 }
 .auth img{
@@ -29,16 +29,23 @@ a.navbar-brand {
     text-align:center;
     color:white;
     font-weight:bold;
-    min-width:100px;
+    min-width:120px;
+    max-height:30px;
     background: #4CAF52;
     padding:5px;
    
 }
-    .menu:hover{
-        background:yellowgreen;
+    .menu:hover {
+        background: yellowgreen;
     }
+
+   
     /* Title
 -------------------------------------------------- */
+    .wrapper{
+        min-height:100vh;
+        margin-top:100px;
+    }
     #lang-title {
         margin-top: 100px;
         font-weight: bold;
