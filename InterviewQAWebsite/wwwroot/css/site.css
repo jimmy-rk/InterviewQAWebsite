@@ -1,0 +1,163 @@
+﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+
+a.navbar-brand {
+  white-space: normal;
+  text-align: center;
+  word-break: break-all;
+}
+.auth {
+    text-transform: uppercase;
+    border-radius:5px;
+    margin-right:5px;
+    
+}
+.auth img{
+    width:30px;
+}
+
+    .auth:hover {
+        opacity: .5;
+    }
+.user-name{
+    font-size:20px;
+    color: #4CAF52;
+    font-style: italic;
+    
+}
+.menu {
+    text-align:center;
+    color:white;
+    font-weight:bold;
+    min-width:100px;
+    background: #4CAF52;
+    padding:5px;
+   
+}
+    .menu:hover{
+        background:yellowgreen;
+    }
+    /* Title
+-------------------------------------------------- */
+    #lang-title {
+        margin-top: 100px;
+        font-weight: bold;
+        font-size: 40px;
+        text-align: center;
+        color: white;
+        background-color: #4CAF52;
+        text-transform: uppercase;
+    }
+
+.content {
+    padding: 60px ;
+}
+
+.qa {
+    text-transform: uppercase;
+}
+
+.qa-a, .qa-q {
+    padding: 10px;
+}
+
+.qa-a {
+    font-size: 14px;
+    font-weight: normal;
+}
+
+.qa-q {
+    font-weight: bold;
+}
+
+.topic {
+    text-align: center;
+    padding: 10px;
+    text-transform: uppercase;
+    box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .2);
+    min-height: 500px;
+}
+
+.topic-content {
+    background-color: #4CAF52;
+    color: white;
+}
+.topic-content:hover{
+    opacity:.7;
+    cursor:pointer;
+}
+.first-topic-content {
+    background-color: #4CAF52;
+    color: white;
+}
+.first-topic-content:hover{
+    opacity:.7;
+    cursor:pointer;
+}
+.edit, .delete, #new,#create,#update,#create-cancel,#update-cancel {
+    margin: 5px;
+    background-color: #4CAF52;
+    color:white;
+    width:150px;
+    border-radius:10px;
+}
+    .edit:hover, .delete:hover, #new:hover, #create:hover, #update:hover,.cancel:hover {
+        opacity: .5;
+    }
+
+#actionContainer {
+    /*margin: 15px;
+    padding:10px;
+    text-align:center;
+    box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .2);*/
+    display:none;
+    
+}
+#qa-form {
+    margin: 15px;
+    padding: 10px;
+    text-align: center;
+    box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .2);
+    display: none;
+}
+#edit-qa-form {
+    margin: 15px;
+    padding: 10px;
+    text-align: center;
+    box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .2);
+    display: none;
+}
+/*  footer 
+-------------------------------------------------- */
+footer {
+    position: fixed;
+    height: 100px;
+    bottom: 0;
+    width: 100%;
+    background-color: #4CAF52 !important;
+}
+html {
+    font-size: 14px;
+}
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.border-top {
+  border-top: 1px solid #e5e5e5;
+}
+.border-bottom {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.box-shadow {
+  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+button.accept-policy {
+  font-size: 1rem;
+  line-height: inherit;
+}
+

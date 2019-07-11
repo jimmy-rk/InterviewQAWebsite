@@ -1,0 +1,132 @@
+﻿@page
+@model InterviewQuestionAnswer.Pages.CSharpModel
+@{
+    ViewData["Title"] = "C#";
+}
+
+<div id="lang-title">C#</div>
+<div class="title-underline"></div>
+<div class="content row">
+    <div class="topic col-md-3"></div>
+    <div class="qa col-md-9"></div>
+</div>
+@section scripts{
+    <script>
+        const allQA = $('<p class="first-topic-content">C#</p>')
+        $('.topic').append(allQA)
+        $.ajax({
+
+            url: `http://interviewqa-api.jimmyrk.com/api/c sharp/`,
+            success: function (response) {
+                const title = 'C#'
+                $('#lang-title').html(title);
+                $('.first-topic-content').css("background-color", "yellowgreen");
+                for (let i = 0; i < response.length; i++) {
+                    const p1 = $(`<p class="qa-q">`)
+                    const p2 = $('<p class="qa-a">')
+
+                    p1.html(`Q${i + 1}. ${response[i].question}`)
+                    p2.html(`<span style="color:green;font-style:italic;font-weight:bold;font-size:20px">Ans</span>   ${response[i].answer}`)
+                    p1.append(p2)
+
+                    $('.qa').append(p1)
+                }
+
+            }
+        })
+
+        $('.topic').on('click', '.first-topic-content', function () {
+            $('.qa').empty();
+            $('.topic-content').css("background-color", "#4CAF52");
+            $('.first-topic-content').css("background-color", "yellowgreen");
+            const title = 'C#';
+            $('#lang-title').html(title);
+            $.ajax({
+
+                url: `http://interviewqa-api.jimmyrk.com/api/c sharp`,
+                success: function (response) {
+
+                    for (let i = 0; i < response.length; i++) {
+                        const p1 = $(`<p class="qa-q">`)
+                        const p2 = $('<p class="qa-a">')
+
+                        p1.html(`Q${i + 1}. ${response[i].question}`)
+                        p2.html(`<span style="color:green;font-style:italic;font-weight:bold;font-size:20px">Ans</span>   ${response[i].answer}`)
+                        p1.append(p2)
+
+                        $('.qa').append(p1)
+                    }
+
+                }
+            })
+        })
+        $.ajax({
+
+            url: 'http://interviewqa-api.jimmyrk.com/api/c sharp',
+            success: function (response) {
+                let topic = []
+                for (let i = 0; i < response.length; i++) {
+                    topic.push(response[i].topic);
+                }
+                const uTopic = [...new Set(topic)]
+
+                for (let i = 0; i < uTopic.length; i++) {
+                    const p1 = $('<p class="topic-content">')
+                    p1.html(uTopic[i])
+
+                    $('.topic').append(p1)
+                }
+
+                //$.ajax({
+
+                //    url: `http://interviewqa-api.jimmyrk.com/api/c sharp/${uTopic[0]}`,
+                //    success: function (response) {
+                //        const title = 'C#-' + $('.topic-content:first-child').html()
+                //        $('#lang-title').html(title);
+                //        $('.topic-content:first-child').css("background-color", "yellowgreen");
+                //        for (let i = 0; i < response.length; i++) {
+                //            const p1 = $(`<p class="qa-q">`)
+                //            const p2 = $('<p class="qa-a">')
+
+                //            p1.html(`Q${i + 1}. ${response[i].question}`)
+                //            p2.html(`<span style="color:green;font-style:italic;font-weight:bold;font-size:20px">Ans</span>   ${response[i].answer}`)
+                //            p1.append(p2)
+
+                //            $('.qa').append(p1)
+                //        }
+
+                //    }
+                //})
+            }
+        })
+
+        $('.topic').on('click', '.topic-content', function () {
+            $('.qa').empty();
+            const name = $.trim(this.innerHTML).toLowerCase();
+            $('.topic-content').css("background-color", "#4CAF52");
+             $('.first-topic-content').css("background-color", "#4CAF52");
+            $(this).css("background-color", "yellowgreen");
+            const title = 'c#-' + name;
+            $('#lang-title').html(title);
+            $.ajax({
+
+                url: `http://interviewqa-api.jimmyrk.com/api/c sharp/${name}`,
+                success: function (response) {
+
+                    for (let i = 0; i < response.length; i++) {
+                        const p1 = $(`<p class="qa-q">`)
+                        const p2 = $('<p class="qa-a">')
+
+                        p1.html(`Q${i + 1}. ${response[i].question}`)
+                        p2.html(`<span style="color:green;font-style:italic;font-weight:bold;font-size:20px">Ans</span>   ${response[i].answer}`)
+                        p1.append(p2)
+
+                        $('.qa').append(p1)
+                    }
+
+                }
+            })
+        })
+    </script>
+
+}

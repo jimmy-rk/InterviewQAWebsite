@@ -1,0 +1,33 @@
+﻿@page
+@model InterviewQuestionAnswer.Pages.AdminModel
+@{
+    ViewData["Title"] = "Admin";
+}
+
+<h1>Admin</h1>
+<input type="button" name="new" id="new" value="New QA" />
+<div id="tableContainer"></div>
+
+
+
+    <form id="qa-form">
+
+        <label>QUESTION:  </label><br><textarea rows="4" cols="50" name="question" id="q" required></textarea><br>
+        <label>ANSWER:  </label> <br><textarea rows="8" cols="50" name="answer" id="a" required ></textarea><br>
+        <label>LANGUAGE:  </label><br><textarea rows="4" cols="50" name="language" id="l" required ></textarea><br>
+        <label>TOPIC:  </label><br><textarea rows="1" cols="50" name="topic" id="t" required ></textarea><br>
+        <input type="button" name="create" id="create" value="Create" /><br>
+        <input type="button" id="create-cancel" value="Cancel" />
+
+    </form>
+    <form id="edit-qa-form">
+        <label>ID:  </label><br><textarea rows="1" cols="4" name="question" id="id" disabled></textarea><br>
+        <label>QUESTION:  </label><br><textarea rows="4" cols="50" name="question" id="qu" required></textarea><br>
+        <label>ANSWER:  </label> <br><textarea rows="8" cols="50" name="answer" id="an" required></textarea><br>
+        <label>LANGUAGE:  </label><br><textarea rows="4" cols="50" name="language" id="la" required></textarea><br>
+        <label>TOPIC:  </label><br><textarea rows="1" cols="50" name="topic" id="to" required></textarea><br>
+        <input type="button" name="create" id="update" value="Update" /><br>
+        <input type="button" id="update-cancel" value="Cancel" />
+
+    </form>
+
